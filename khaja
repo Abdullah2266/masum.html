@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fuck You Khaja 😈</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+
+body{
+  height:100vh;
+  overflow:hidden;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:radial-gradient(circle,#350015,#050008 70%);
+  font-family:Arial,sans-serif;
+}
+
+.text{
+  text-align:center;
+  color:#ff4f9a;
+  font-size:48px;
+  font-weight:bold;
+  text-shadow:0 0 10px #fff,
+              0 0 30px #ff0066,
+              0 0 70px #ff0066;
+  animation:pulse 1.2s infinite alternate;
+  z-index:5;
+}
+
+@keyframes pulse{
+  from{transform:scale(.9);opacity:.7}
+  to{transform:scale(1.15);opacity:1}
+}
+
+.item{
+  position:absolute;
+  bottom:-60px;
+  animation:up 5s linear forwards;
+}
+
+@keyframes up{
+  0%{transform:translateY(0) rotate(0);opacity:0}
+  15%{opacity:1}
+  100%{transform:translateY(-110vh) rotate(360deg);opacity:0}
+}
+</style>
+</head>
+
+<body>
+
+<div class="text">Fuck You Khaja 😈</div>
+
+<script>
+function createItem(){
+  const x=document.createElement("div");
+  x.className="item";
+
+  const icons=["😈","🔥","💀","💢","⚡","😎"];
+
+  x.innerHTML=icons[Math.floor(Math.random()*icons.length)];
+  x.style.left=Math.random()*100+"vw";
+  x.style.fontSize=(20+Math.random()*35)+"px";
+  x.style.animationDuration=(3+Math.random()*4)+"s";
+
+  document.body.appendChild(x);
+
+  setTimeout(()=>x.remove(),8000);
+}
+
+setInterval(createItem,250);
+</script>
+
+</body>
+</html>
